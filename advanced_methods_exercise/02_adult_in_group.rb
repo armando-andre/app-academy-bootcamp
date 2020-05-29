@@ -5,9 +5,9 @@
 def adult_in_group?(people)
   people.each do |ele|
     if ele[:age] > 16
-      return true
+      true
     else
-      return false
+      false
     end
   end
 end
