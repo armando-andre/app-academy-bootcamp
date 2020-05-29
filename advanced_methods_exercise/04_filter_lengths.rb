@@ -12,7 +12,7 @@ def filter_lengths(strings, length=5)
     end
   end
 
-  return emptyArray
+  emptyArray
 end
 
 p filter_lengths(["pear", "dragonfruit", "fig", "clementine"], 4)   # => ["pear", "dragonfruit", "clementine"]
