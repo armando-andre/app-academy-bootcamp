@@ -16,9 +16,9 @@ def only_vowels?(str)
   end
 
   if charArray.length === 0
-    return true
+    true
   else
-    return false
+    false
   end
 end
 

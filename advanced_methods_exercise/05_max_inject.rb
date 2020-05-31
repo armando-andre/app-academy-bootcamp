@@ -12,7 +12,7 @@ def max_inject(*arr)
     end
   end
 
-  return highest
+  highest
 end
 
 p max_inject(1, -4, 0, 7, 5)  # => 7

@@ -6,7 +6,7 @@ def multi_dimensional_sum(array)
 
   array.flatten.each { |ele| sum += ele }
 
-  return sum
+  sum
 end
 
 arr_1 = [

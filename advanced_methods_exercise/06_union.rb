@@ -8,7 +8,7 @@ def union(*value)
     emptyArray << ele
   end
 
-  return emptyArray
+  emptyArray
 end
 
 p union(["a", "b"], [1, 2, 3]) # => ["a", "b", 1, 2, 3]

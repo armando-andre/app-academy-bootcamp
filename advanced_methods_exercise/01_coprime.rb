@@ -23,9 +23,9 @@ def coprime?(num_1, num_2)
   end
 
   if emptyArray.length === 0
-    return true
+    true
   else
-    return false
+    false
   end
 end
 
