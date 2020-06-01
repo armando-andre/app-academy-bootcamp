@@ -3,6 +3,21 @@
 # An element is considered a "peak" if it is greater than both it's left and right neighbor.
 # The first or last element of the array is considered a "peak" if it is greater than it's one neighbor.
 
+def peak_finder(arr)
+  emptyArray = []
+
+  emptyArray << arr[0] if arr[0] > arr[1]
+
+  (emptyArray.length...arr.length - 1).each do |ele|
+    if arr[ele] > arr[ele - 1] && arr[ele] > arr[ele + 1]
+      emptyArray << arr[ele]
+    end
+  end
+
+  emptyArray << arr[-1] if arr[-1] > arr[-2]
+
+  emptyArray
+end
 
 p peak_finder([1, 3, 5, 4])         # => [5]
 p peak_finder([4, 2, 3, 6, 10])     # => [4, 10]
