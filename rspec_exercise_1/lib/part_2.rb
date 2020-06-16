@@ -13,4 +13,17 @@ def hipsterfy(word)
   word
 end
 
-p hipsterfy("cdl")
+def vowel_counts(string_arg)
+  vowels = "aeiou"
+  hash = Hash.new(0)
+
+  string_arg.downcase.each_char do |i|
+    if vowels.include?(i)
+      hash[i] += 1
+    end
+  end
+
+  p hash
+end
+
+p vowel_counts("WILLIAMSBURG bridge")
