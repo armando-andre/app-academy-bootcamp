@@ -1,8 +1,8 @@
-def partition(arr, num)
+def partition(arrPartition, num)
   lowArr = []
   highArr = []
 
-  arr.each do |ele|
+  arrPartition.each do |ele|
     if ele >= num
       highArr << ele
     else
@@ -22,3 +22,22 @@ def merge(hash_1, hash_2)
   
   hash
 end
+
+def censor(sentence, arrCensor)
+  vowels = "aeiou"
+
+  arrCensor.each do |arrCensorWord|
+    if sentence.downcase.include?(arrCensorWord.downcase)
+      arrCensorWord.each_char.with_index do |char, i|
+        p char
+        # sentence[i] = "*" if vowels.include?(char)
+      end
+    end
+  end
+
+  # sentence.each_char do |sentenceChar|
+  #   p sentenceChar
+  # end
+end
+
+p censor("Gosh darn it", ["gosh", "darn", "shoot"])
