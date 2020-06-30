@@ -24,20 +24,63 @@ def merge(hash_1, hash_2)
 end
 
 def censor(sentence, arrCensor)
+  sentenceSplited = sentence.split(" ")
   vowels = "aeiou"
+  emptyArray = []
 
-  arrCensor.each do |arrCensorWord|
-    if sentence.downcase.include?(arrCensorWord.downcase)
-      arrCensorWord.each_char.with_index do |char, i|
-        p char
-        # sentence[i] = "*" if vowels.include?(char)
+  sentenceSplited.each do |word|
+    (0...arrCensor.length).each do |i|
+      if word.downcase.include?(arrCensor[i])
+        newWord = []
+
+        word.each_char do |char|
+          if vowels.include?(char)
+            newWord << "*"
+          else
+            newWord << char
+          end
+        end
+
+        emptyArray << newWord.join("")
       end
     end
   end
 
-  # sentence.each_char do |sentenceChar|
-  #   p sentenceChar
-  # end
+  emptyArray.each do |word|
+    (0...sentenceSplited.length).each do |ele|
+      p sentenceSplited[ele]
+    end
+  end
+
+  emptyArray
 end
 
 p censor("Gosh darn it", ["gosh", "darn", "shoot"])
+
+
+
+
+
+
+
+  # vowels = "aeiou"
+  # emptyArray = []
+  # sentenceSplited = sentence.split(" ")
+
+  # arrCensor.each do |arrCensorWord|
+  #   if sentence.downcase.include?(arrCensorWord.downcase)
+  #     newWord = []
+
+  #     arrCensorWord.each_char do |char|
+  #       if vowels.include?(char)
+  #         newWord << "*"
+  #       else
+  #         newWord << char
+  #       end
+  #     end
+
+  #     emptyArray << newWord.join("")
+  #   end
+  # end
+
+  # emptyArray
