@@ -27,6 +27,7 @@ def censor(sentence, arrCensor)
   sentenceSplited = sentence.split(" ")
   vowels = "aeiou"
   emptyArray = []
+  i = 0
 
   sentenceSplited.each do |word|
     (0...arrCensor.length).each do |i|
@@ -44,15 +45,13 @@ def censor(sentence, arrCensor)
         emptyArray << newWord.join("")
       end
     end
-  end
+      
+    while i < emptyArray.length
+      p emptyArray[i]
 
-  emptyArray.each do |word|
-    (0...sentenceSplited.length).each do |ele|
-      p sentenceSplited[ele]
+      i += 1
     end
   end
-
-  emptyArray
 end
 
 p censor("Gosh darn it", ["gosh", "darn", "shoot"])
