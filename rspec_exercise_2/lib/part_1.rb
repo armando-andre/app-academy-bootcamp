@@ -52,7 +52,7 @@ def star_vowels(string)
   new_str
 end
 
-def power_of_two(powerNumber)
+def power_of_two?(powerNumber)
   product = 1
 
   while product < powerNumber
