@@ -51,3 +51,13 @@ def star_vowels(string)
 
   new_str
 end
+
+def power_of_two(powerNumber)
+  product = 1
+
+  while product < powerNumber
+    product *= 2
+  end
+
+  product == powerNumber
+end
