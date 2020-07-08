@@ -26,3 +26,15 @@ def substrings(string)
 
   emptyArray
 end
+
+def palindrome_substrings(string)
+  substringsArray = []
+
+  substrings(string).each do |ele|
+    if ele.length > 1 && palindrome?(ele) 
+      substringsArray << ele
+    end
+  end
+
+  substringsArray
+end
