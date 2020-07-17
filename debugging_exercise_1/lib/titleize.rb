@@ -10,17 +10,13 @@ def titleize(title)
   little_words = [ "and", "the", "over", "a", "on", "of" ]
   words = title.split(" ")
 
-  titleized_words = words.map.with_index do |i, word|
-    if word == 0 && little_words.include?(i)
-      i[0].upcase + i[1..-1].downcase if i[0].downcase
-    elsif little_words.include?(i)
-      i.downcase
+  titleized_words = words.map.with_index do |word, i|
+    if i == 0 || !little_words.include?(word)
+      word.capitalize
     else
-      i[0].upcase + i[1..-1].downcase
+      word.downcase
     end
   end
 
   titleized_words.join(" ")
 end
-
-p titleize("the bridge on the river kwai")
