@@ -16,5 +16,3 @@ def prime?(num)
 
     true
 end
-
-p prime?(9)
