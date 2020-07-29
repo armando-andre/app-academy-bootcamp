@@ -15,3 +15,18 @@ def largest_prime_factor(num)
     end
   end
 end
+
+def unique_chars?(str)
+  strHash = Hash.new(0)
+  strUnique = true
+
+  str.each_char do |char|
+    strHash[char] += 1
+
+    strHash.each_value do |val|
+      return strUnique = false if val > 1
+    end
+  end
+
+  strUnique
+end
