@@ -1,7 +1,7 @@
 def select_even_nums(arr)
-  evenNumsArr = []
+  arr.select(&:even?)
+end
 
-  arr.select { |num| evenNumsArr << num if num.even? }
-
-  evenNumsArr
+def reject_puppies(arr)
+  arr.reject { |ele| ele["age"] <= 2 }
 end
