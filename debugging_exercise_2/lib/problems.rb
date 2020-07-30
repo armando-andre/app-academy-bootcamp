@@ -40,4 +40,17 @@ def dupe_indices(arr)
   indices.select { |ele, arr| arr.length > 1 }
 end
 
-dupe_indices(["a", "b", "c", "c", "b"])
+def ana_array(arr1, arr2)
+  arr1Hash = Hash.new(0)
+  arr2Hash = Hash.new(0)
+
+  arr1.each do |ele|
+    arr1Hash[ele] += 1
+  end
+
+  arr2.each do |ele|
+    arr2Hash[ele] += 1
+  end
+
+  arr1Hash === arr2Hash
+end
