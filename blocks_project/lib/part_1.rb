@@ -7,5 +7,20 @@ def reject_puppies(arr)
 end
 
 def count_positive_subarrays(arr)
-  arr.count { |num| num.sum >= 1 }
+  arr.count { |num| num.sum > 0 }
+end
+
+def aba_translate(string)
+  vowels = "aeiou"
+  newStr = ""
+
+  string.each_char do |ele|
+    if vowels.include?(ele)
+      newStr += ele + "b" + ele
+    else
+      newStr += ele
+    end
+  end
+
+  newStr
 end
