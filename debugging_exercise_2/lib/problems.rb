@@ -30,3 +30,14 @@ def unique_chars?(str)
 
   strUnique
 end
+
+def dupe_indices(arr)
+  indices = Hash.new { |hash, key| hash[key] = [] }
+  arr.each_with_index do |ele, i|
+    indices[ele] << i
+  end
+
+  indices.select { |ele, arr| arr.length > 1 }
+end
+
+dupe_indices(["a", "b", "c", "c", "b"])
