@@ -24,3 +24,9 @@ def aba_translate(string)
 
   newStr
 end
+
+def aba_array(arr)
+  arr.map { |ele| aba_translate(ele) }
+end
+
+p aba_array(["cat", "dog", "butterfly"])
