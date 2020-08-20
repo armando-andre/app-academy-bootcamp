@@ -5,3 +5,11 @@ def my_map(arr, &prc)
 
   newArray
 end
+
+def my_select(arr, &prc)
+  newArray = []
+
+  arr.each { |val| newArray << val if prc.call(val) }
+
+  newArray
+end
