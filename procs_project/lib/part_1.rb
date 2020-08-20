@@ -21,3 +21,18 @@ def my_count(arr, &prc)
 
   counter
 end
+
+def my_any?(arr, &prc)
+  switch = nil
+
+  arr.each do |val|
+    if prc.call(val) === true
+      switch = true
+      break
+    else
+      switch = false
+    end
+  end
+
+  switch
+end
