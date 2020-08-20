@@ -13,3 +13,11 @@ def my_select(arr, &prc)
 
   newArray
 end
+
+def my_count(arr, &prc)
+  counter = 0
+
+  arr.each { |val| counter += 1 if prc.call(val) }
+
+  counter
+end
