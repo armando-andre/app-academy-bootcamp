@@ -36,3 +36,18 @@ def my_any?(arr, &prc)
 
   switch
 end
+
+def my_all?(arr, &prc)
+    switch = nil
+
+  arr.each do |val|
+    if prc.call(val) === false
+      switch = false
+      break
+    else
+      switch = true
+    end
+  end
+
+  switch
+end
