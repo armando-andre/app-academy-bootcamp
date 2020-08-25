@@ -63,8 +63,4 @@ def my_none?(arr, &prc)
       switch = true
     end
   end
-
-  p switch
 end
-
-my_none?([3, 5, 7, 11]) { |n| n.even? }

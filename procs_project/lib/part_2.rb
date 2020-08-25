@@ -12,4 +12,10 @@ def word_changer(str, &prc)
   newStr.join(" ")
 end
 
-word_changer("goodbye moon") { |word| word.upcase + "!" }
+def greater_proc_value(num, prc1, prc2)
+  if prc1.call(num) > prc2.call(num)
+    return prc1.call(num)
+  else
+    return prc2.call(num)
+  end
+end
