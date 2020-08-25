@@ -63,4 +63,6 @@ def my_none?(arr, &prc)
       switch = true
     end
   end
+
+  switch
 end

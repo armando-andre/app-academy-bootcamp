@@ -29,3 +29,14 @@ def and_selector(arr, prc1, prc2)
 
   newArr
 end
+
+def alternating_mapper(arr, prc1, prc2)
+  newArr = []
+
+  p prc1.call(arr[1])
+end
+
+half = Proc.new { |n| n / 2.0 }
+times_thousand = Proc.new { |n| n * 1000 }
+
+alternating_mapper([1,10,4,7,5], half, times_thousand)
