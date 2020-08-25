@@ -33,10 +33,13 @@ end
 def alternating_mapper(arr, prc1, prc2)
   newArr = []
 
-  p prc1.call(arr[1])
+  arr.each.with_index do |ele, i|
+    if i % 2 == 0
+      newArr << prc1.call(ele)
+    else
+      newArr << prc2.call(ele)
+    end
+  end
+
+  newArr
 end
-
-half = Proc.new { |n| n / 2.0 }
-times_thousand = Proc.new { |n| n * 1000 }
-
-alternating_mapper([1,10,4,7,5], half, times_thousand)
