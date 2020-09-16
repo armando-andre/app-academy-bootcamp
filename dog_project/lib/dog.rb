@@ -39,10 +39,17 @@ class Dog
     @favorite_foods = var
   end
 
-  def self.favorite_food?(str)
-    p str
+  def favorite_food?(str)
+    switch = false
+
+    if @favorite_foods.is_a? String
+      switch = true if @favorite_foods.downcase === str.downcase
+    else
+      @favorite_foods.each do |ele|
+        switch = true if ele.downcase === str.downcase
+      end
+    end
+
+    switch
   end
 end
-
-cat_1 = Dog.new("Mellow", "French Bulldog", 1, "woof woof", "fish")
-Dog.favorite_food?("meat")
