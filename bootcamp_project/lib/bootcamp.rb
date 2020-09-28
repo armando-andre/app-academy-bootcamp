@@ -30,5 +30,22 @@ class Bootcamp
     def hire(teacher_to_hire)
       @teachers << teacher_to_hire
     end
+
+    def enroll(student)
+      if students.length < @student_capacity
+        @students << student
+        true
+      else
+        false
+      end
+    end
+
+    def enrolled?(student)
+      if @students.include?(student)
+        true
+      else
+        false
+      end
+    end
   end
 end
