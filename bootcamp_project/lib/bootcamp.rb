@@ -52,15 +52,13 @@ class Bootcamp
   def student_to_teacher_ratio
     @students.length / @teachers.length
   end
+
+  def add_grade(student, grades)
+    if enrolled?(student)
+      @grades[student] << grades
+      true
+    else
+      false
+    end
+  end
 end
-
-bootcamp1 = Bootcamp.new("App Academy", "All Together", 30)
-bootcamp1.hire("Jeff")
-bootcamp1.hire("Matthias")
-bootcamp1.hire("Armando")
-bootcamp1.enroll("student one")
-bootcamp1.enroll("student two")
-bootcamp1.enroll("student three")
-bootcamp1.enroll("student four")
-
-p bootcamp1.student_to_teacher_ratio
