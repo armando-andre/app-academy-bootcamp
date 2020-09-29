@@ -65,14 +65,8 @@ class Bootcamp
   def num_grades(student)
     @grades[student].length
   end
+
+  def average_grade(student)
+    @grades[student].sum / @grades[student].length.floor if enrolled?(student) && @grades[student].length > 0
+  end
 end
-
-
-bootcamp1 = Bootcamp.new("App Academy", "All Together", 30)
-bootcamp1.enroll("Alice")
-bootcamp1.enroll("Bob")
-bootcamp1.add_grade("Alice", 100)
-bootcamp1.add_grade("Alice", 75)
-bootcamp1.add_grade("Bob", 87)
-
-p bootcamp1.num_grades("Alice")
