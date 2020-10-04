@@ -3,10 +3,12 @@ class Array
   def span
     return nil if self.length === 0
 
-    if self.length > 1
-      return self.max - self.min
-    else
-      return 0
-    end      
+    self.max - self.min
+  end
+
+  def average
+    return nil if self.length === 0
+
+    self.sum / self.length.to_f
   end
 end
