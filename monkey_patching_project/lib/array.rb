@@ -27,4 +27,14 @@ class Array
       total.to_f / 2
     end
   end
+
+  def counts
+    counter = Hash.new(0)
+
+    self.each do |ele|
+      counter[ele] += 1
+    end
+
+    counter
+  end
 end
