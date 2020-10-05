@@ -37,4 +37,14 @@ class Array
 
     counter
   end
+
+  def my_count(val)
+    counter = 0
+
+    self.each do |ele|
+      counter += 1 if ele === val
+    end
+
+    counter
+  end
 end
