@@ -61,4 +61,17 @@ class Array
 
     index
   end
+
+  def my_uniq
+    counter = Hash.new(0)
+    emptyArr = []
+
+    self.each do |ele|
+      counter[ele] += 1
+    end
+
+    counter.each_key { |key| emptyArr << key }
+
+    emptyArr
+  end
 end
