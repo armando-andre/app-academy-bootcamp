@@ -11,4 +11,20 @@ class Array
 
     self.sum / self.length.to_f
   end
+
+  def median
+    return nil if self === []
+
+    arraySorted = self.sort
+    arrLength = arraySorted.length
+    firstNumToAverage = arraySorted[arrLength / 2 - 1]
+    secondNumToAverage = arraySorted[arrLength / 2]
+
+    if arrLength % 2 == 1
+      arraySorted[arrLength / 2]
+    else
+      total = firstNumToAverage + secondNumToAverage
+      total.to_f / 2
+    end
+  end
 end
