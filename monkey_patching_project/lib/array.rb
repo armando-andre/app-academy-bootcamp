@@ -47,4 +47,18 @@ class Array
 
     counter
   end
+
+  def my_index(val)
+    index = 0
+
+    (0...self.length).each do |position| 
+      if self[position] === val
+        return index = position
+      else
+        index = nil
+      end
+    end
+
+    index
+  end
 end
