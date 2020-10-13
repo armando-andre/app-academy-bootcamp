@@ -91,17 +91,3 @@ class Array
     newArr
   end
 end
-
-arr_1 = [
-  ["a", "b", "c"],
-  ["d", "e", "f"], 
-  ["g", "h", "i"]
-]
-
-expected_1 = [
-  ["a", "d", "g"],
-  ["b", "e", "h"],
-  ["c", "f", "i"]
-]
-
-p arr_1.my_transpose
