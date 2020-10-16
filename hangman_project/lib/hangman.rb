@@ -44,12 +44,12 @@ class Hangman
 
   def fill_indices(char, arr)
     @secret_word.each_char.with_index do |ele, i|
-      if @secret_word.include?(char)
-        p @guess_word = Array.new(i, char)
-      else
-        # p @guess_word = Array.new(i, "_")
+      if char === ele
+        @guess_word[i] = ele
       end
     end
+
+    @guess_word
   end
 end
 
