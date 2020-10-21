@@ -11,11 +11,22 @@ class Hotel
 
     def name
       upcaseName = @name.split(" ")
-
       upcaseName.each { |ele| ele[0] = ele[0].upcase }.join(" ")
+    end
+
+    def rooms
+      @rooms
+    end
+
+    def room_exists?(string)
+      if @rooms.include?(string)
+        true
+      else
+        false
+      end
     end
   end
 end
 
 
-p Hotel.new("hilbert's grand hotel", "Basement"=>4).name
+p Hotel.new("hilbert's grand hotel", "Basement"=>4).room_exists?("cool")
