@@ -14,9 +14,9 @@ class Room
 
   def full?
     if @occupants.length < @capacity
-      false
+      return false
     else
-      true
+      return true
     end 
   end
 
@@ -25,11 +25,11 @@ class Room
   end
 
   def add_occupant(string)
-    if !full?
-      @occupants << string
-      true
+    if self.full?
+      return false
     else
-      false
+      @occupants << string
+      return true
     end
   end
 end
