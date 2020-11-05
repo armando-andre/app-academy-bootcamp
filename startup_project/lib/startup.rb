@@ -49,10 +49,38 @@ class Startup
   end
 
   def pay_employee(instance)
-    instance.pay(@salaries).each do |ele, key|
-      p ele
-      p key
+    moneyToPay = @salaries[instance.title]
+
+    if @funding >= moneyToPay
+      instance.pay(moneyToPay)
+      @funding -= moneyToPay
+    else
+      raise "No funds"
     end
-    # p instance.pay(3000)
+  end
+
+  def payday
+    @employees.each do |ele|
+      self.pay_employee(ele)
+    end
+  end
+
+  def average_salary
+    sum = 0
+
+    @employees.each do |val|
+      sum += @salaries[val.title]
+    end
+
+    sum / @employees.length
+  end
+
+  def close
+    @employees.clear()
+    @funding = 0
+  end
+
+  def acquire(newStartup)
+    p newStartup.funding = @funding
   end
 end
