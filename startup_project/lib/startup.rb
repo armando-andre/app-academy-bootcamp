@@ -47,4 +47,12 @@ class Startup
   def size
     @employees.length
   end
+
+  def pay_employee(instance)
+    instance.pay(@salaries).each do |ele, key|
+      p ele
+      p key
+    end
+    # p instance.pay(3000)
+  end
 end
