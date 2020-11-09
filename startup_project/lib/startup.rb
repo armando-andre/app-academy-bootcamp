@@ -81,6 +81,10 @@ class Startup
   end
 
   def acquire(newStartup)
-    p newStartup.funding = @funding
+    @funding += newStartup.funding
+
+    newStartup.salaries.each do |key, val|
+      @salaries[key] = val if @salaries.include?(key) != true
+    end
   end
 end
