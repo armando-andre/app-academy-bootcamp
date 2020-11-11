@@ -86,5 +86,11 @@ class Startup
     newStartup.salaries.each do |key, val|
       @salaries[key] = val if @salaries.include?(key) != true
     end
+
+    newStartup.employees.each do |employee|
+      @employees << employee
+    end
+
+    newStartup.close
   end
 end
